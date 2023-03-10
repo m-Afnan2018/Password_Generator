@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 600;
+
+    /* No Selection possible */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+:root{
+    --color_black: #000000;
+    --color_blue: #00e0d1;
+    --color_green: #00ff00;
+    --color_purple: #871c9c;
+    --color_5: #101010;
+    --color_light_purple: #bc15f4;
+    --color_dark_purple: #160628;
+    --color_yellow: #ffe53d;
+    --color_white: #ffffff;
+    --color_10: #341c4f;
+    --color_dark_white:#cccccc;
+    --color_red: #ff0000;
+    --shadow_color: #cccccc;
+}
+#wrapper{
+    height: 100%;
+    width: 100vw;
+    position: fixed;
+    background: linear-gradient(231deg, rgba(22, 6, 40, 1) 0%, rgba(52, 28, 79, 1) 50%, rgba(88, 7, 125, 1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#main-container{
+    width: 90%;
+    max-width: 450px;
+}
+h1{
+    font-size: 32px;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    opacity: 0.75;
+    text-transform: uppercase;
+    color: var(--color_white);
+    font-weight: 600;
+    text-align: center;
+}
+#output-section{
+    margin: 16px 0;
+    padding-top: 5px;
+    background-color: var(--color_dark_purple);
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.35rem solid hsl(281, 89%, 26%);;
+    position: relative;
+}
+#copied{
+    display: none;
+    position: absolute;
+    top: -10px;
+    right: 0px;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 16px;
+    color: var(--color_yellow);
+    background-color: var(--color_purple);
+}
+#password{
+    all: unset;
+    width: 80%;
+    padding: 18px 16px;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    color: var(--color_yellow);
+}
+#password::placeholder{
+    text-transform: uppercase;
+    color: var(--color_yellow);
+    opacity: 75%;
+}
+#copy-button{
+    cursor: pointer;
+}
+#copy-button{
+    margin-right: 24px;
+}
+#password-settings{
+    padding: 32px;
+    border-radius: 16px;
+    background-color: var(--color_dark_purple);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#password-length{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+}
+#password-length-heading{
+    font-weight: 400;
+    color: var(--color_white);
+}
+#password-length-value{
+    font-weight: 600;
+    color: var(--color_yellow);
+}
+#slider{
+    appearance: none;
+    margin: 16px 0;
+    height: 0.75rem;
+    width: 100%;
+    background-color: var(--color_10);
+    border-radius: 1rem;
+}
+#slider::-webkit-slider-runnable-track{
+    appearance: none;
+}
+#slider::-webkit-slider-thumb{
+    appearance: none;
+    z-index: 1;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    background-color: var(--color_yellow);
+    box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.50);
+    cursor: pointer;
+}
+#slider:hover::-webkit-slider-thumb{
+    background-color: var(--color_dark_purple);
+    border: var(--color_yellow) solid 2px;
+    z-index: 1;
+}
+/* #slider{
+    appearance: none;
+    margin: 16px 0;
+    height: 0.75rem;
+    width: 100%;
+    background-color: var(--color_10);
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    accent-color: var(--color_light_purple);
+    background-color: var(--color_10);
+} */
+/* #slider::-webkit-slider-thumb{
+    z-index:1;
+    appearance: none;
+    height:2rem;
+    width:2rem;
+    border-radius: 50%;
+    background-color: var(--color_yellow);
+    cursor:pointer;
+    margin-top: -3px;
+    box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.50);
+    transition: all 100ms ease-in;
+}
+#slider::-moz-range-thumb {
+    z-index: 1;
+    appearance: none;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background: var(--color_yellow);
+    box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.50);
+    cursor: pointer;
+}
+#slider::-moz-range-thumb:hover {
+    outline: 2px solid var(--color_yellow);
+    background-color: var(--color_dark_purple);
+    box-shadow: 0px 0px 25px 5px rgba(255, 229, 61, 0.80);
+}
+#slider:focus{
+    outline: 1px solid var(--color_yellow);
+} */
+.options{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    height: 128px;
+    width: 100%;
+    margin: 12px 0 28px 0;
+}
+.checkbox-container{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.checkbox-container>label{
+    color: var(--color_white);
+    font-size: 20px;
+    letter-spacing: 0.75px;
+    padding-left: 16px;
+    font-weight: 400;
+}
+.check-options{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--color_blue);
+    cursor: pointer;
+    position: relative;
+    border-radius: 0.35rem;
+}
+.check-options:checked{
+    background-color: var(--color_blue);
+}
+.check-options:checked::before{
+    content: '✔';
+    color: var(--dk-text);
+    font-size:1.0rem;
+    font-weight: 600;
+    position: absolute;
+    top: -10%;
+    right: 10%;
+}
+#strength{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+#strength>p{
+    font-size: 24px;
+    color: var(--color_white);
+    font-weight: 400;
+}
+#strength-indicator{
+    width: 24px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--shadow_color);
+    box-shadow: var(--shadow_color) 0px 0px 12px 1px;
+    border-radius: 100%;
+}
+#generate-button{
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    color: var(--color_yellow);
+    background-color: var(--color_light_purple);
+    border-bottom: 5px solid var(--color_yellow);
+    cursor: pointer;
+}
